@@ -19,9 +19,10 @@ body {
   gap: 10px;
   margin: 20px 0;
   font-size: 18px;
+  align-items: center;
 }
 
-select {
+select, button {
   background: rgba(255, 255, 255, 0.1);
   color: white;
   border: 1px solid rgba(255,255,255,0.3);
@@ -29,15 +30,17 @@ select {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
-select:hover { background: rgba(255, 255, 255, 0.2); }
 
-/* Поле */
+button:hover, select:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .field {
   position: relative;
   width: 80vw;
-  height: 75vh;
+  height: 70vh;
   max-width: 1000px;
   background: linear-gradient(#0b6623, #097c33);
   border: 3px solid #fff;
@@ -46,7 +49,6 @@ select:hover { background: rgba(255, 255, 255, 0.2); }
   overflow: hidden;
 }
 
-/* Линии поля */
 .field::before {
   content: "";
   position: absolute;
@@ -68,7 +70,6 @@ select:hover { background: rgba(255, 255, 255, 0.2); }
   border: 2px solid rgba(255,255,255,0.3);
 }
 
-/* Игрок */
 .player {
   position: absolute;
   width: 70px;
@@ -86,19 +87,27 @@ select:hover { background: rgba(255, 255, 255, 0.2); }
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0,0,0,0.4);
   transition: all 0.7s ease;
+  transform: translate(-50%, -50%);
 }
 
-.player.goalkeeper { background: linear-gradient(145deg, #ffbf00, #ff9100); color: #111; }
-.player:hover { transform: scale(1.1); filter: brightness(1.2); }
+.player.goalkeeper {
+  background: linear-gradient(145deg, #ffbf00, #ff9100);
+  color: #111;
+}
 
-/* Скамейка */
+.player:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: brightness(1.2);
+}
+
 .bench {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 20px;
   justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
 }
+
 .bench h3 {
   width: 100%;
   text-align: center;
@@ -106,15 +115,23 @@ select:hover { background: rgba(255, 255, 255, 0.2); }
   margin-bottom: 5px;
   color: rgba(255,255,255,0.8);
 }
+
 .bench .player {
+  position: static;
   width: 55px;
   height: 55px;
   background: linear-gradient(145deg, #444, #222);
-  opacity: 0.8;
+  border: 1px solid rgba(255,255,255,0.4);
+  opacity: 0.9;
+  transform: none;
 }
 
-/* Адаптивность */
+.bench .player:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .player { width: 50px; height: 50px; font-size: 12px; }
-  .field { width: 95vw; height: 70vh; }
+  .bench .player { width: 45px; height: 45px; }
+  .field { width: 95vw; height: 65vh; }
 }
