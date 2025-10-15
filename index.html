@@ -3,35 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Состав 4-3-3</title>
+  <title>Состав команды — Конструктор</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Состав команды (4-3-3)</h1>
+  <h1>Футбольная схема команды</h1>
 
-  <div class="field">
-    <!-- Вратарь -->
-    <div class="player" style="top: 90%; left: 50%;">Вратарь</div>
-
-    <!-- Защитники (4) -->
-    <div class="player" style="top: 70%; left: 20%;">ЛЗ</div>
-    <div class="player" style="top: 70%; left: 40%;">ЦЗ</div>
-    <div class="player" style="top: 70%; left: 60%;">ЦЗ</div>
-    <div class="player" style="top: 70%; left: 80%;">ПЗ</div>
-
-    <!-- Полузащитники (3) -->
-    <div class="player" style="top: 50%; left: 30%;">ЦП</div>
-    <div class="player" style="top: 50%; left: 50%;">ЦОП</div>
-    <div class="player" style="top: 50%; left: 70%;">ЦП</div>
-
-    <!-- Нападающие (3) -->
-    <div class="player" style="top: 30%; left: 25%;">ЛФА</div>
-    <div class="player" style="top: 25%; left: 50%;">ЦФ</div>
-    <div class="player" style="top: 30%; left: 75%;">ПФА</div>
+  <div class="controls">
+    <label for="formation">Выберите схему:</label>
+    <select id="formation">
+      <option value="4-3-3">4-3-3</option>
+      <option value="4-4-2">4-4-2</option>
+      <option value="3-5-2">3-5-2</option>
+      <option value="4-2-3-1">4-2-3-1</option>
+      <option value="5-3-2">5-3-2</option>
+      <option value="3-4-3">3-4-3</option>
+    </select>
   </div>
 
+  <div class="field" id="field"></div>
+
   <h2>Скамейка запасных</h2>
-  <div class="bench">
+  <div class="bench" id="bench">
     <div class="sub">Запасной 1</div>
     <div class="sub">Запасной 2</div>
     <div class="sub">Запасной 3</div>
